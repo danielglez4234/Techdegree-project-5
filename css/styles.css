@@ -1,4 +1,4 @@
-/* ===================================== 
+/* =====================================
    Public API Request
 ======================================== */
 
@@ -16,7 +16,8 @@ html, body {
 body {
     font-family: "Nunito", sans-serif;
     text-align: center;
-    background: rgba(235, 235, 235, 0.9);
+		background-size: cover;
+		background-color: #1a1717;
 }
 
 header {
@@ -30,7 +31,13 @@ header {
 
 header h1 {
     font-size: 1.25em;
-    color: rgba(50, 50, 50, 0.9);
+    color: white;
+    margin-top: 35px;
+		font-family: Solway;
+}
+header h2 {
+    font-size: 1.25em;
+    color: white;
     margin-top: 35px;
 }
 
@@ -63,7 +70,7 @@ header h1 {
 }
 
 
-/* ===================================== 
+/* =====================================
    Gallery
 ======================================== */
 
@@ -75,8 +82,9 @@ header h1 {
     width: 100%;
     max-width: 1200px;
     margin: auto;
+		color:white;
 }
-  
+
 .card {
     display: flex;
     flex-direction: row;
@@ -87,7 +95,7 @@ header h1 {
     max-width: 360px;
     margin: 10px 10px 20px;
     padding: 10px;
-    background: rgba(245, 245, 245, 0.9);
+		background-image: linear-gradient(to right, #537c86, #54868f, #569098, #579ba0, #59a5a8);
     border-radius: 0.25em;
     border: 1px solid rgba(50, 50, 50, 0.3);
     transition: .4s ease-out;
@@ -95,6 +103,8 @@ header h1 {
 }
 
 .card-img {
+		/* width: 114px;
+    margin: -11px 15px -12px -10px; */
     width: 95px;
     margin: 10px 15px auto 10px;
     border-radius: 50%;
@@ -106,13 +116,16 @@ header h1 {
 
 .card-name {
     margin: 20px auto 0;
+		font-family: JosefinSans_BoldItalic;
+		color:black;
 }
 
 .card-text {
     font-size: 0.9em;
-    color: rgba(50, 50, 50, 0.7);
+    color: white;
     margin: 7px auto;
-    transition: .4s ease-out;
+    transition: .3s ease-out;
+		font-family: JosefinSans_SemiBold;
 }
 
 .cap {
@@ -120,7 +133,7 @@ header h1 {
 }
 
 
-/* ===================================== 
+/* =====================================
    Modal
 ======================================== */
 
@@ -133,6 +146,8 @@ header h1 {
     background: rgba(0, 0, 0, 0.7);
 }
 
+
+
 .modal {
     position: relative;
     width: 95%;
@@ -141,9 +156,11 @@ header h1 {
     margin: 10px auto auto;
     padding-bottom: 15px;
     background: rgba(255, 255, 255, 1);
+		background-image: linear-gradient(to left bottom, #213337, #244a50, #226269, #1c7c81, #0c9699);
     border-radius: 0.25em;
     border: 1px solid rgba(100, 100, 100, 0.3);
     transition: .4s ease-out;
+		animation: animatezoom 0.3s;
 }
 
 .modal-close-btn {
@@ -152,7 +169,7 @@ header h1 {
     right: 15px;
     cursor: pointer;
     color: rgba(255, 255, 255, 0.9);
-    background: rgba(0, 0, 0, 0.8);
+    background: black;
     outline: none;
     border-radius: 0.25em;
     border: 1px solid rgba(50, 50, 50, 0.3);
@@ -166,11 +183,15 @@ header h1 {
 
 .modal-name {
     margin-bottom: 5px;
+		font-size: 24px;
+		font-family: JosefinSans_BoldItalic;
+		color:black;
 }
 
 .modal-text {
-    color: rgba(50, 50, 50, 0.7);
+    color: white;
     margin: 10px;
+		font-family: JosefinSans_SemiBold;
 }
 
 .modal hr {
@@ -188,9 +209,10 @@ header h1 {
     max-width: 420px;
     padding: 10px 15px 15px;;
     margin: 10px auto auto;
-    background: rgba(255, 255, 255, 1);
+    background: black;
     border-radius: 0.25em;
     border: 1px solid rgba(100, 100, 100, 0.3);
+		/* animation: animatezoom 0.3s; */
 }
 
 
@@ -199,20 +221,30 @@ header h1 {
     cursor: pointer;
     font-size: 0.85em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.9);
+    color: black;
     padding: 0.75em 1.5em;
-    background: rgba(0, 0, 0, 0.8);
+    background: white;
     border-radius: 0.35em;
-    transition: .4s ease-out;
+    transition: 0.15s ease-out;
     outline: none;
+		font-weight: bold;
+		font-family: Solway;
   }
-  
 
-/* ===================================== 
+
+/* =====================================
+Animations
+======================================*/
+	@keyframes animatezoom {
+	    from {transform: scale(0)}
+	    to {transform: scale(1)}
+	}
+
+/* =====================================
    Media Queries
 ======================================== */
 
-/* ===================================== 
+/* =====================================
    Tablet
 ======================================== */
 
@@ -240,9 +272,9 @@ header h1 {
 }
 
 
-/* ===================================== 
+/* =====================================
    Desktop
-   Hover styles on desktop 
+   Hover styles on desktop
 ======================================== */
 
 @media (min-width: 1024px) {
@@ -253,11 +285,31 @@ header h1 {
     }
 
     .card:hover .card-text {
-        color: rgba(25, 25, 25, 1); 
+        color: rgba(25, 25, 25, 1);
     }
 
     .btn:hover {
         background: rgba(255, 255, 255, 1);
-        color: rgba(25, 25, 25, 1); 
+        color: rgba(25, 25, 25, 1);
     }
+		.modal-btn-container .btn:hover{
+			background:black;
+			color: white;
+		}
 }
+
+
+/*------------------FONTS-----------------------------------------------------*/
+@font-face {
+  font-family: JosefinSans_SemiBold;
+  src: url('../fonts/JosefinSans/JosefinSans-SemiBold.ttf');
+}
+@font-face {
+  font-family: JosefinSans_BoldItalic;
+  src: url('../fonts/JosefinSans/JosefinSans-BoldItalic.ttf');
+}
+@font-face {
+  font-family: Solway;
+  src: url('../fonts/Solway/Solway-Light.ttf');
+}
+/*------------------END FONTS-------------------------------------------------*/
