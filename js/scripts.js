@@ -163,7 +163,7 @@ function search(){
   const searchInputHTML = `
   <form action="#" method="get">
       <input type="search" id="search-input" class="search-input" placeholder="Search..." value="">
-      <input type="submit" value="&#x1F50D;" id="search-submit" class="search-submit">
+      <input type="button" value="&#x1F50D;" id="search-submit" class="search-submit">
   </form>
   `;
   $searchContainer.append(searchInputHTML); // generate the search input
